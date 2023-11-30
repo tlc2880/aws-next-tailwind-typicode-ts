@@ -1,7 +1,14 @@
-export default function Users() {
+import UserList from "./UserList";
+
+export default function Tickets() {
   return (
     <main>
-      <h2>Users</h2>
+      <nav>
+        <div>
+          <h2>Users</h2>
+        </div>
+      </nav>
+      <UserList />
     </main>
   )
 }
