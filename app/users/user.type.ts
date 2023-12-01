@@ -21,3 +21,10 @@ export type UserType = {
     bs: string
   }
 }
+
+export type TodoType = {
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean,
+}
