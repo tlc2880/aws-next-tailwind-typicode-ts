@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { UserType }  from './user.type';
 
 async function getUsers() {
@@ -16,10 +17,12 @@ export default async function UserList() {
     <>
       {users.map(( user: UserType ) => (
         <div key={user.id} className="card my-5">
-          <h3>{user.name}</h3>
-          <p>UserName: {user.username}</p>
-          <p>Email: {user.email}</p>
-          <p>Company: {user.company.name}</p>
+          <Link href={`/users/${user.id}`}>
+            <h3>{user.name}</h3>
+            <p>UserName: {user.username}</p>
+            <p>Email: {user.email}</p>
+            <p>Company: {user.company.name}</p>
+          </Link>
         </div>
       ))}
       {users.length === 0 && (
