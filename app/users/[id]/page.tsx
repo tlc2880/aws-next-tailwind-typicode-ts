@@ -9,7 +9,7 @@ export async function generateStaticParams() {
   const todos = await res.json()
 
   return todos.map((todo: TodoType ) => ({
-    id: todo.id
+    userId: todo.userId
   }))
 }
 
