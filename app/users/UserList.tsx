@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { UserType }  from './user.type';
 
 async function getUsers() {
+  // imitate delay
+  await new Promise(resolve => setTimeout(resolve, 3000))
+  
   const res = await fetch('https://jsonplaceholder.typicode.com/users', {
     next: {
       revalidate: 0 // use 0 to opt out of using cache

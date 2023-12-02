@@ -9,8 +9,8 @@ export type UserType = {
     city: string,
     zipcode: string,
     geo: {
-        lat: string,
-        lng: string
+      lat: string,
+      lng: string
     }
   },
   phone: string,
