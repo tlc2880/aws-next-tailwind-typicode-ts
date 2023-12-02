@@ -1,7 +1,22 @@
 import { notFound } from "next/navigation"
 import { UserType, TodoType } from '../user.type';
 
+export const dynamicParams = true  // default val = true
+
+export async function generateStaticParams() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos')
+
+  const todos = await res.json()
+
+  return todos.map((todo: TodoType ) => ({
+    id: todo.id
+  }))
+}
+
 async function getTodos(id: string) {
+  // imitate delay
+  await new Promise(resolve => setTimeout(resolve, 3000))
+
   const res = await fetch(`https://jsonplaceholder.typicode.com/todos?userId=${id}`, {
     next: {
       revalidate: 60
@@ -28,7 +43,7 @@ async function getUsers() {
 export default async function UserTodos({ params }: any) {
   // const id = params.id
   const todos: TodoType[] = await getTodos(params.id);
-  const users: UserType[]  = await getUsers();
+  const users: UserType[] = await getUsers();
 
   return (
     <main>
