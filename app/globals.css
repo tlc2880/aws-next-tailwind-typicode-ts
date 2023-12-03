@@ -129,6 +129,9 @@ form button {
 .pill.false {
   @apply bg-blue-300 text-blue-600;
 }
+/* .pill.low {
+  @apply bg-emerald-300 text-emerald-600;
+} */
 .card .pill {
   @apply 
     absolute bottom-0 right-0 

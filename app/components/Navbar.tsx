@@ -7,12 +7,12 @@ export default function Navbar() {
     <nav>
       <Image
         src={UsersLogo}
-        alt='Users Typicode logo'
+        alt='Typicode Users logo'
         width={70}
         placeholder='blur'
         quality={100}
       />
-      <h1>Users Typicode</h1>
+      <h1>Typicode Users </h1>
       <Link href="/">Dashboard</Link>
       <Link href="/users">Users</Link>
     </nav>

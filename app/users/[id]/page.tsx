@@ -14,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 async function getTodos(id: string) {
-  // imitate delay
-  // await new Promise(resolve => setTimeout(resolve, 3000))
+//  imitate delay
+  await new Promise(resolve => setTimeout(resolve, 3000))
 
   const res = await fetch(`https://jsonplaceholder.typicode.com/todos?userId=${id}`, {
     next: {
@@ -43,7 +43,7 @@ async function getUsers() {
 export default async function UserTodos({ params }: any) {
   // const id = params.id
   const todos: TodoType[] = await getTodos(params.id);
-  const users: UserType[] = await getUsers();
+  const users: UserType[]  = await getUsers();
 
   return (
     <main>
