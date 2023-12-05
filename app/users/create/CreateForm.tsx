@@ -7,7 +7,7 @@ export default function CreateForm () {
   const router = useRouter()
 
   const [title, setTitle] = useState('')
-  const [completed, setCompleted] = useState('false')
+  const [completed, setCompleted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: any) => {
@@ -25,7 +25,8 @@ export default function CreateForm () {
 
     if (res.status === 201) {
       router.refresh()
-      router.push('/todos')
+      router.push('/users/1')
+      router.refresh()
     }
   }
 
@@ -43,11 +44,11 @@ export default function CreateForm () {
       <label>
         <span>Completed:</span>
         <select
-          onChange={(e) => setCompleted(e.target.value)}
-          value={completed}
+          onChange={(e: any) => setCompleted(e.target.value === "true" ? true : false )}
+          value = {completed === true? 'true': 'false'}
         >
-          <option value="true">Completed</option>
-          <option value="false">Not Completed</option>
+          <option value = {'true'} >Completed</option>
+          <option value = {'false'} >Not Completed</option>
         </select>
       </label>
       <button 
