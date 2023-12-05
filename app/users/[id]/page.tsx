@@ -4,7 +4,7 @@ import { UserType, TodoType } from '../user.type';
 export const dynamicParams = true  // default val = true
 
 export async function generateStaticParams() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos')
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
 
   const todos = await res.json()
 
@@ -44,7 +44,7 @@ export default async function UserTodos({ params }: any) {
   // const id = params.id
   const todos: TodoType[] = await getTodos(params.id);
   const users: UserType[]  = await getUsers();
-
+  console.table(todos)
   return (
     <main>
       <nav>
