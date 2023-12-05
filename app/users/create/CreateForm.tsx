@@ -14,12 +14,13 @@ export default function CreateForm () {
     e.preventDefault()
     setIsLoading(true)
 
-    const newTicket = { title, completed, user_email: 'tommy@email.dom' }
+    const userId = 1
+    const newUser = { title, completed, userId }
 
-    const res = await fetch('https://jsonplaceholder.typicode.com/users/todos', {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(newTicket)
+      headers: {"Content-Type": "application/json; charset=UTF-8"},
+      body: JSON.stringify(newUser)
     })
 
     if (res.status === 201) {
@@ -49,6 +50,13 @@ export default function CreateForm () {
           <option value="false">Not Completed</option>
         </select>
       </label>
+      <button 
+        className="btn-primary" 
+        disabled={isLoading}
+      >
+        {isLoading && <span>Adding...</span>}
+        {!isLoading && <span>Add Todo</span>}
+      </button>
     </form>
   )
 }
