@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 
 async function getTodos(id: string) {
 //  imitate delay
-  await new Promise(resolve => setTimeout(resolve, 3000))
+//  await new Promise(resolve => setTimeout(resolve, 3000))
 
   const res = await fetch(`https://jsonplaceholder.typicode.com/todos?userId=${id}`, {
     next: {
