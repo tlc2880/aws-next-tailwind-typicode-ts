@@ -44,7 +44,6 @@ export default async function UserTodos({ params }: any) {
   // const id = params.id
   const todos: TodoType[] = await getTodos(params.id);
   const users: UserType[]  = await getUsers();
-  console.table(todos)
   return (
     <main>
       <nav>

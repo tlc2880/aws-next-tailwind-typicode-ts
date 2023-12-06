@@ -2,20 +2,41 @@
 
 import { useRouter } from "next/navigation"
 import React, { useState } from "react"
+import { UserType } from '../user.type';
+import useFetch from "../useFetch";
+
+async function getUsers() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+    next: {
+      revalidate: 0 // use 0 to opt out of using cache
+    }
+  })
+
+  return res.json()
+}
 
 export default function CreateForm () {
   const router = useRouter()
 
   const [title, setTitle] = useState('')
   const [completed, setCompleted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoadingForm, setIsLoadingForm] = useState(false)
+  const [userId, setUserId] = useState('1')
+  const { data, error, isLoading } = useFetch('https://jsonplaceholder.typicode.com/users');
+
+  if (isLoading) {
+    return <div>Loading..</div>;
+  }
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-    setIsLoading(true)
+    setIsLoadingForm(true)
 
-    const userId = 1
     const newUser = { title, completed, userId }
+    console.table(newUser)
 
     const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
       method: "POST",
@@ -25,8 +46,7 @@ export default function CreateForm () {
 
     if (res.status === 201) {
       router.refresh()
-      router.push('/users/1')
-      router.refresh()
+      router.push(`/users/${userId}`)
     }
   }
 
@@ -49,6 +69,17 @@ export default function CreateForm () {
         >
           <option value = {'true'} >Completed</option>
           <option value = {'false'} >Not Completed</option>
+        </select>
+      </label>
+      <label>
+        <span>User:</span>
+        <select
+          onChange={(e: any) => setUserId(e.target.value)}
+          value = {userId}
+        >
+          {data.map(( user: UserType ) => (
+            <option key={user.id} value = {user.id} >{user.name}</option>
+          ))}
         </select>
       </label>
       <button 
