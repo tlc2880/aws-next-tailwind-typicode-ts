@@ -4,8 +4,8 @@
 
 /* base styles */
 body {
-  background: #ebf0fa;
-  @apply text-gray-500 m-8;
+  background: #101216;
+  @apply text-gray-300 m-8;
 }
 h1, h2 {
   @apply font-bold text-primary text-lg;
@@ -30,10 +30,10 @@ nav {
     max-w-5xl;
 }
 nav a, nav span {
-  @apply text-gray-500;
+  @apply text-gray-400;
 }
 nav a:hover {
-  @apply text-black;
+  @apply text-gray-200;
 }
 main nav {
   @apply border-0;
@@ -60,12 +60,13 @@ button:hover {
 /* form styles */
 form {
   @apply 
-    py-4 px-7 
-    bg-primary 
-    bg-opacity-5 
+    py-4 px-5 
+    bg-gray-400 
+    bg-opacity-10 
     rounded-md 
     block 
     mx-auto 
+    text-purple-700 
     min-w-fit w-1/4;
 }
 form label {
@@ -100,7 +101,7 @@ form button {
 /* card styles */
 .card {
   @apply 
-    bg-white 
+    bg-gray-800 
     shadow-sm 
     rounded-md 
     py-3 px-4 my-4 
@@ -109,7 +110,7 @@ form button {
 }
 .card h3 {
   @apply 
-    font-bold text-gray-700 text-sm 
+    font-bold text-gray-200 text-sm 
     mb-0;
 }
 .card p {
@@ -124,14 +125,11 @@ form button {
     text-xs font-semibold;
 }
 .pill.true {
-  @apply bg-red-300 text-red-600;
+  @apply bg-red-500 text-gray-800;
 }
 .pill.false {
-  @apply bg-blue-300 text-blue-600;
+  @apply bg-blue-500 text-gray-800;
 }
-/* .pill.low {
-  @apply bg-emerald-300 text-emerald-600;
-} */
 .card .pill {
   @apply 
     absolute bottom-0 right-0 

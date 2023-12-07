@@ -11,7 +11,7 @@ export default function Users() {
           <h2>Users</h2>
         </div>
         <Link href="/users/create" className="ml-auto">
-          <button className="btn-primary">New User</button>
+          <button className="btn-primary">New Todo</button>
         </Link>
       </nav>
       <Suspense fallback={<Loading />}>

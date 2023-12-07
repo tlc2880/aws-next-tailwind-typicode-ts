@@ -12,10 +12,10 @@ export default function Navbar() {
         placeholder='blur'
         quality={100}
       />
-      <h1>Typicode Users </h1>
+      <h1>Typicode Users Todos</h1>
       <Link href="/">Dashboard</Link>
       <Link href="/users">Users</Link>
-      <Link href="/users/create">New User</Link>
+      <Link href="/users/create">New Todo</Link>
     </nav>
   )
 }

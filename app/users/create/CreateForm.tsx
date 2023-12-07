@@ -4,16 +4,7 @@ import { useRouter } from "next/navigation"
 import React, { useState } from "react"
 import { UserType } from '../user.type';
 import useFetch from "../useFetch";
-
-async function getUsers() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users', {
-    next: {
-      revalidate: 0 // use 0 to opt out of using cache
-    }
-  })
-
-  return res.json()
-}
+import Loading from "../../loading"
 
 export default function CreateForm () {
   const router = useRouter()
@@ -25,7 +16,7 @@ export default function CreateForm () {
   const { data, error, isLoading } = useFetch('https://jsonplaceholder.typicode.com/users');
 
   if (isLoading) {
-    return <div>Loading..</div>;
+    return <Loading />;
   }
   if (error) {
     return <div>{error}</div>;
@@ -36,7 +27,6 @@ export default function CreateForm () {
     setIsLoadingForm(true)
 
     const newUser = { title, completed, userId }
-    console.table(newUser)
 
     const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
       method: "POST",
@@ -84,10 +74,10 @@ export default function CreateForm () {
       </label>
       <button 
         className="btn-primary" 
-        disabled={isLoading}
+        disabled={isLoadingForm}
       >
-        {isLoading && <span>Adding...</span>}
-        {!isLoading && <span>Add Todo</span>}
+        {isLoadingForm && <span>Adding...</span>}
+        {!isLoadingForm && <span>Add Todo</span>}
       </button>
     </form>
   )
