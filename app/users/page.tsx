@@ -5,7 +5,6 @@ export default function Users() {
   return (
     <>
       <h1>Users</h1>
-      <Link href="/">Link to Home Page</Link>
     </>
   )
 }
