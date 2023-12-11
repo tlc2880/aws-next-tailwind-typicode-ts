@@ -5,10 +5,10 @@
 /* base styles */
 body {
   background: #1c1c1d;
-  @apply text-gray-500 m-8;
+  @apply text-gray-300 m-8;
 }
 h1, h2 {
-  @apply font-bold text-primary text-lg;
+  @apply font-bold text-blue-700 text-lg;
 }
 main {
   @apply max-w-5xl my-12 mx-auto px-8;
@@ -30,10 +30,10 @@ nav {
     max-w-5xl;
 }
 nav a, nav span {
-  @apply text-gray-500;
+  @apply text-gray-300;
 }
 nav a:hover {
-  @apply text-black;
+  @apply text-white;
 }
 main nav {
   @apply border-0;
@@ -60,7 +60,7 @@ button:hover {
 /* card styles */
 .card {
   @apply 
-    bg-white 
+    bg-gray-800 
     shadow-sm 
     rounded-md 
     py-3 px-4 my-4 
@@ -69,7 +69,7 @@ button:hover {
 }
 .card h3 {
   @apply 
-    font-bold text-gray-700 text-sm 
+    font-bold text-gray-200 text-sm 
     mb-0;
 }
 .card p {
