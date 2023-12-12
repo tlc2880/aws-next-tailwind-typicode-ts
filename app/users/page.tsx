@@ -1,10 +1,14 @@
-import Link from "next/link"
+import UsersList from "./UsersList";
 
 export default function Users() {
-  //throw new Error('Not today!')
   return (
-    <>
-      <h1>Users</h1>
-    </>
+    <main>
+      <nav>
+        <div>
+          <h2>Users</h2>
+        </div>
+      </nav>
+      <UsersList />
+    </main>
   )
 }
