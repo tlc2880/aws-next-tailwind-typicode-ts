@@ -1,4 +1,5 @@
 import { Rubik } from 'next/font/google'
+import './globals.css'
 
 // components
 import Navbar from './components/Navbar'
