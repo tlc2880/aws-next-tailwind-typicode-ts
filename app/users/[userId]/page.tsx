@@ -4,8 +4,6 @@ import getUserTodos from "@/lib/getUserTodos"
 import { Suspense } from "react"
 import UserTodos from "./components/UserTodos"
 import type { Metadata } from 'next'
-import '../../globals.css'
-import UsersList from "../UsersList";
 
 type Params = {
   params: {
