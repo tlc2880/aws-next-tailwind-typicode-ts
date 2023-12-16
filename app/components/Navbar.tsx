@@ -15,6 +15,7 @@ export default function Navbar() {
       <h1>Users Typicode</h1>
       <Link href="/">Dashboard</Link>
       <Link href="/users">Users</Link>
+      <Link href="/create-new">Create-New User</Link>
       <Link href="/users/create">New User</Link>
     </nav>
   )
