@@ -1,8 +1,8 @@
-import { UserType, TodoType } from '../../types.d'
+import { UserType, TodoType } from '../../../types.d'
 import getUser from "@/lib/getUser"
 import getUserTodos from "@/lib/getUserTodos"
 import { Suspense } from "react"
-import UserTodos from "./components/UserTodos"
+import CreateForm from "./components/CreateForm"
 import Link from "next/link"
 import type { Metadata } from 'next'
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params: { userId } }: Params): Promise<
   }
 }
 
-export default async function UserPage({ params: { userId } }: Params) {
+export default async function CreatePage({ params: { userId } }: Params) {
   const userData: Promise<UserType> = getUser(userId)
   const userTodosData: Promise<TodoType[]> = getUserTodos(userId)
 
@@ -35,13 +35,8 @@ export default async function UserPage({ params: { userId } }: Params) {
     <main>
       <nav>
         <h2>{user.name}</h2>
-        <Link href="/users/create" className="ml-auto">
-          <button className="btn-primary">New Todo</button>
-        </Link>
       </nav>
-      <Suspense fallback={<h2>Loading...</h2>}>
-        <UserTodos promise={userTodosData} />
-      </Suspense>
+      <CreateForm initialId={userId}/>
     </main>
   )
 }
