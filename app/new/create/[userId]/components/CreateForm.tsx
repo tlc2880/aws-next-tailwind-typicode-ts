@@ -2,15 +2,19 @@
 
 import { useRouter } from "next/navigation"
 import React, { useState, SyntheticEvent } from "react"
-import { UserType } from '../../types.d'
+import { UserType } from '../../../../types.d'
 import useFetch from "@/lib/useFetch";
-import Loading from "../loading"
+import Loading from "../../loading"
 
-export default function CreateForm () {
+type Props = {
+  initialId: string
+}
+
+export default function CreateForm ({ initialId }: Props) {
   const [title, setTitle] = useState('')
   const [completed, setCompleted] = useState(false)
   const [isLoadingForm, setIsLoadingForm] = useState(false)
-  const [userId, setUserId] = useState('1')
+  const [userId, setUserId] = useState(initialId)
   const { data, error, isLoading } = useFetch('https://jsonplaceholder.typicode.com/users');
 
   const router = useRouter()
