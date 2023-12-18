@@ -1,4 +1,4 @@
-import { UserType, TodoType } from '../../types.d'
+import { UserType, TodoType } from '../../../types'
 import getUser from "@/lib/getUser"
 import getUserTodos from "@/lib/getUserTodos"
 import { Suspense } from "react"

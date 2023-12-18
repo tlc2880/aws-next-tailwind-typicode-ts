@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import React, { useState, SyntheticEvent } from "react"
-import { UserType } from '../../../../types.d'
+import { UserType } from '../../../../types'
 import useFetch from "@/lib/useFetch";
 import Loading from "../../loading"
 

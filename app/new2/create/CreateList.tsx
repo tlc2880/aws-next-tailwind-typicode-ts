@@ -1,4 +1,4 @@
-import { UserType } from '../../types.d'
+import { UserType } from '../../types'
 import type { Metadata } from 'next'
 import getAllUsers from '@/lib/getAllUsers'
 import Link from "next/link"
