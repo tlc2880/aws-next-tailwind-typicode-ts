@@ -19,6 +19,7 @@ export default function Navbar() {
       <Link href="/create-new">Create-New Todo</Link>
       <Link href="/new">New</Link>
       <Link href="/new/create">New_Create</Link>
+      <Link href="/new2">New2</Link>
     </nav>
   )
 }
