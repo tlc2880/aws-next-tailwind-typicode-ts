@@ -15,7 +15,7 @@ export default function CreateForm ({ initialId }: Props) {
   const [completed, setCompleted] = useState(false)
   const [isLoadingForm, setIsLoadingForm] = useState(false)
   const [userId, setUserId] = useState(initialId)
-  const { data, error, isLoading } = useFetch('http://localhost:4000/users');
+  const { data, error, isLoading } = useFetch('https://jsonplaceholder.typicode.com/users');
 
   const router = useRouter()
 
@@ -32,7 +32,7 @@ export default function CreateForm ({ initialId }: Props) {
 
     const newUser = { title, completed, userId }
 
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
+    const res = await fetch('http://localhost:4000/todos', {
       method: "POST",
       headers: {"Content-Type": "application/json; charset=UTF-8"},
       body: JSON.stringify(newUser)
