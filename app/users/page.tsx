@@ -6,9 +6,9 @@ export default function Users() {
     <main>
       <nav>
         <div>
-          <h2>Users</h2>
+          <h1>Users</h1>
         </div>
-        <Link href="/users/create" className="ml-auto">
+        <Link href="/users/create/1" className="ml-auto">
           <button className="btn-primary">New Todo</button>
         </Link>
       </nav>

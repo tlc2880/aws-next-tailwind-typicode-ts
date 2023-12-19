@@ -1,4 +1,4 @@
-import { UserType, TodoType } from '../../types.d'
+import { UserType, TodoType } from '../../types'
 import getUser from "@/lib/getUser"
 import getUserTodos from "@/lib/getUserTodos"
 import { Suspense } from "react"
@@ -30,12 +30,12 @@ export default async function UserPage({ params: { userId } }: Params) {
   //const [user, userTodos] = await Promise.all([userData, userTodosData])
 
   const user = await userData
-
+  const hrefString = `/users/create/${userId}`
   return (
     <main>
       <nav>
         <h2>{user.name}</h2>
-        <Link href="/users/create" className="ml-auto">
+        <Link href = {hrefString} className="ml-auto">
           <button className="btn-primary">New Todo</button>
         </Link>
       </nav>

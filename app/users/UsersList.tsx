@@ -1,15 +1,14 @@
-import { UserType } from '../types.d'
+import { UserType } from '../types'
 import type { Metadata } from 'next'
 import getAllUsers from '@/lib/getAllUsers'
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: 'Users',
+  title: 'Create',
 }
 
 export default async function UsersList() {
   const usersData: Promise<UserType[]> = getAllUsers()
-
   const users = await usersData
 
   const content = (

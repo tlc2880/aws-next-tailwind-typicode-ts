@@ -12,14 +12,10 @@ export default function Navbar() {
         placeholder='blur'
         quality={100}
       />
-      <h1>Users Typicode</h1>
+      <h1>Users Todos Typicode</h1>
       <Link href="/">Dashboard</Link>
-      <Link href="/users">Users</Link>
-      <Link href="/users/create">New Todo</Link>
-      <Link href="/create-new">Create-New Todo</Link>
-      <Link href="/new">New</Link>
-      <Link href="/new/create">New_Create</Link>
-      <Link href="/new2">New2</Link>
+      <Link href="/users">User</Link>
+      <Link href="/users/create/1">New Todo</Link>
     </nav>
   )
 }

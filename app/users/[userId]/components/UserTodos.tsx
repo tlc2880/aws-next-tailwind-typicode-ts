@@ -1,4 +1,4 @@
-import { TodoType } from '../../../types.d'
+import { TodoType } from '../../../types'
 
 type Props = {
   promise: Promise<TodoType[]>
