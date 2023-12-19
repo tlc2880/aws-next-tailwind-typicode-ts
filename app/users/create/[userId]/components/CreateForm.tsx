@@ -32,7 +32,7 @@ export default function CreateForm ({ initialId }: Props) {
 
     const newUser = { title, completed, userId }
 
-    const res = await fetch('http://localhost:4000/todos', {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
       method: "POST",
       headers: {"Content-Type": "application/json; charset=UTF-8"},
       body: JSON.stringify(newUser)
