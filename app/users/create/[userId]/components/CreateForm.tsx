@@ -15,7 +15,7 @@ export default function CreateForm ({ initialId }: Props) {
   const [completed, setCompleted] = useState(false)
   const [isLoadingForm, setIsLoadingForm] = useState(false)
   const [userId, setUserId] = useState(initialId)
-  const { data, error, isLoading } = useFetch('http://localhost:4000/users');
+  const { data, error, isLoading } = useFetch('https://jsonplaceholder.typicode.com/users');
 
   const router = useRouter()
 
